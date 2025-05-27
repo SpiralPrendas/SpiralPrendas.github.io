@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Spiral - Ropa Mujeres</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #2f2f2f;
+            color: #d6c7f5;
+            margin: 0; padding: 0;
+        }
+        header {
+            background: #5a3d7c;
+            padding: 1rem;
+            text-align: center;
+            font-size: 2rem;
+            font-weight: bold;
+        }
+        nav {
+            background: #433364;
+            display: flex;
+            justify-content: center;
+            gap: 1rem;
+            padding: 0.5rem;
+        }
+        nav a {
+            color: #d6c7f5;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 0.5rem 1rem;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        nav a:hover {
+            background-color: #6f51a5;
+        }
+        main {
+            max-width: 900px;
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+        h2 {
+            border-bottom: 2px solid #6f51a5;
+            padding-bottom: 0.5rem;
+        }
+        .categoria {
+            margin-top: 2rem;
+        }
+        .productos {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        .producto {
+            background: #433364;
+            border-radius: 8px;
+            padding: 1rem;
+            width: 180px;
+            text-align: center;
+            cursor: pointer;
+            transition: transform 0.2s ease;
+        }
+        .producto:hover {
+            transform: scale(1.05);
+            background: #5a3d7c;
+        }
+        .producto img {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            border-radius: 5px;
+            margin-bottom: 0.5rem;
+        }
+        button {
+            background: #6f51a5;
+            border: none;
+            padding: 0.4rem 1rem;
+            border-radius: 4px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        button:hover {
+            background-color: #9079c9;
+        }
+        .mensaje-compra {
+            margin-top: 1rem;
+            color: #b3b3ff;
+            font-style: italic;
+        }
+    </style>
+</head>
+<body>
+    <header>SPIRAL - Ropa Mujeres</header>
+    <nav>
+        <a href="index.html">Inicio</a>
+        <a href="hombres.html">Ropa Hombres</a>
+        <a href="mujeres.html" style="background:#6f51a5;">Ropa Mujeres</a>
+        <a href="sobre-nosotros.html">Sobre Nosotros</a>
+        <a href="miembros.html">Miembros</a>
+        <a href="contacto.html">Contacto</a>
+    </nav>
+    <main>
+        <h2>Blusas</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="imagenes/mujeres/blusa1.jpg" alt="Blusa 1" />
+                <div>Blusa blanca básica</div>
+                <button onclick="simularCompra('Blusa blanca básica')">Seleccionar</button>
+            </div>
+            <div class="producto">
+                <img src="imagenes/mujeres/blusa2.jpg" alt="Blusa 2" />
+                <div>Blusa morada con estampado</div>
+                <button onclick="simularCompra('Blusa morada con estampado')">Seleccionar</button>
+            </div>
+        </div>
+
+        <h2 class="categoria">Pantalones</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="imagenes/mujeres/pantalon1.jpg" alt="Pantalón 1" />
+                <div>Pantalón negro de mezclilla</div>
+                <button onclick="simularCompra('Pantalón negro de mezclilla')">Seleccionar</button>
+            </div>
+            <div class="producto">
+                <img src="imagenes/mujeres/pantalon2.jpg" alt="Pantalón 2" />
+                <div>Pantalón gris con detalles</div>
+                <button onclick="simularCompra('Pantalón gris con detalles')">Seleccionar</button>
+            </div>
+        </div>
+
+        <h2 class="categoria">Sudaderas</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="imagenes/mujeres/sudadera1.jpg" alt="Sudadera 1" />
+                <div>Sudadera morada con capucha</div>
+                <button onclick="simularCompra('Sudadera morada con capucha')">Seleccionar</button>
+            </div>
+            <div class="producto">
+                <img src="imagenes/mujeres/sudadera2.jpg" alt="Sudadera 2" />
+                <div>Sudadera gris con logo</div>
+                <button onclick="simularCompra('Sudadera gris con logo')">Seleccionar</button>
+            </div>
+        </div>
+
+        <h2 class="categoria">Accesorios</h2>
+        <div class="productos">
+            <div class="producto">
+                <img src="imagenes/mujeres/accesorio1.jpg" alt="Accesorio 1" />
+                <div>Bolso morado</div>
+                <button onclick="simularCompra('Bolso morado')">Seleccionar</button>
+            </div>
+            <div class="producto">
+                <img src="imagenes/mujeres/accesorio2.jpg" alt="Accesorio 2" />
+                <div>Aretes de moda</div>
+                <button onclick="simularCompra('Aretes de moda')">Seleccionar</button>
+            </div>
+        </div>
+
+        <div id="mensaje" class="mensaje-compra"></div>
+    </main>
+    <script>
+        function simularCompra(nombreProducto) {
+            const mensaje = document.getElementById('mensaje');
+            mensaje.textContent = `Has seleccionado: ${nombreProducto} (esto es solo una simulación)`;
+            setTimeout(() => { mensaje.textContent = ''; }, 4000);
+        }
+    </script>
+</body>
+</html>
